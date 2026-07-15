@@ -63,7 +63,7 @@ pub fn mutexed_buffer() -> [u64; 100] {
 // including the holder trying to release.
 // Fix: test-and-test-and-set (TTAS) — spin on plain `load(Relaxed)` until
 // the flag looks free (loads can share the line in Shared state), only
-// then attempt the `swap`. Revisit after studying MESI / cache coherence.
+// then attempt the `swap`.
 
 // Non-optimized: [43.027 ms 43.735 ms 44.414 ms]
 pub struct SpinLock<T> {
